@@ -1,3 +1,18 @@
+$showProcesses = $false
+
+$showConsole = 0
+if ($showProcesses -eq $true){$showConsole = 1}
+
+# Hide PowerShell Console
+Add-Type -Name Window -Namespace Console -MemberDefinition '
+[DllImport("Kernel32.dll")]
+public static extern IntPtr GetConsoleWindow();
+[DllImport("user32.dll")]
+public static extern bool ShowWindow(IntPtr hWnd, Int32 nCmdShow);
+'
+$consolePtr = [Console.Window]::GetConsoleWindow()
+$null = [Console.Window]::ShowWindow($consolePtr, $showConsole) 
+
 $rawGithub = "https://raw.githubusercontent.com/McHusky/RockysUltimateDLTool/main/Rockys%20Ultimate%20DL%20Tool"
 
 $root = ([IO.FileInfo] $MyInvocation.MyCommand.Path).Directory.Parent.FullName
