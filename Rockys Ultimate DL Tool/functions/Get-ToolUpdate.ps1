@@ -32,4 +32,3 @@ foreach ($file in $toolFiles)
       }
    }
 }
-Read-Host "was"
