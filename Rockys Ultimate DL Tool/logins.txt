@@ -1,0 +1,7 @@
+# data-load.in
+username: 
+password: 
+
+# boerse.am
+username: 
+password: 
