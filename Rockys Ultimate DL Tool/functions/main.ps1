@@ -1,4 +1,4 @@
-﻿$showProcesses = $true
+﻿$showProcesses = $false
 
 $showConsole = 0
 if ($showProcesses -eq $true){$showConsole = 1}
