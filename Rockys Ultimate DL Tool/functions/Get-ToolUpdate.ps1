@@ -1,5 +1,19 @@
 $showProcesses = $false
 
+$check_all_functions =
+@"
+Get-Passwords.ps1
+Get-ToolUpdate.ps1
+Search-Boerse.ps1
+Search-DDLWarez.ps1
+Search-DataLoad.ps1
+Search-HDSource.ps1
+Search-MovieBlogArea.ps1
+Search-StarWarez.ps1
+Search-VideothekCX.ps1
+Update-EdgeDriver.ps1
+"@ -split "`n"
+
 $showConsole = 0
 if ($showProcesses -eq $true){$showConsole = 1}
 
@@ -16,6 +30,24 @@ $null = [Console.Window]::ShowWindow($consolePtr, $showConsole)
 $rawGithub = "https://raw.githubusercontent.com/McHusky/RockysUltimateDLTool/main/Rockys%20Ultimate%20DL%20Tool"
 
 $root = ([IO.FileInfo] $MyInvocation.MyCommand.Path).Directory.Parent.FullName
+
+### PART 1 - File Availability ###
+
+$rawGithubFunctions = "$rawGithub/functions"
+
+$functionsPath = "$root\functions"
+
+foreach($function in $check_all_functions){
+   $localPath = "$functionsPath\$function"
+
+   if((Test-Path -Path "$localPath" -PathType Leaf) -eq $false){
+      Write-Host "$function"
+      Invoke-Webrequest -Uri "$rawGithubFunctions/$function" -Outfile "$localPath"
+   }
+}
+
+
+### PART 2 - File Update ###
 
 <# OBSOLET - ONLY WORKING OUTSIDE OF SCRIPT
 $exclude =
