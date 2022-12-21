@@ -486,11 +486,14 @@ AAA=#>
 			$progressbar1.Value++
 		}
 		
+		<#
 		. "$functionsPath\Search-Boerse.ps1"
 		if ($boerseLink -ne $null)
 		{
 			$btn_Boerse.BackColor = '0, 192, 0'
 		}
+		#>
+
 		$progressbar1.Value = 17
 		
 		. "$functionsPath\Search-DataLoad.ps1"
@@ -809,6 +812,7 @@ AAA=#>
 	# btn_Boerse
 	#
 	$btn_Boerse.BackColor = 'ControlLightLight'
+	$btn_Boerse.Enabled = $False
 	$btn_Boerse.Location = '595, 12'
 	$btn_Boerse.Margin = '4, 4, 4, 4'
 	$btn_Boerse.Name = 'btn_Boerse'
