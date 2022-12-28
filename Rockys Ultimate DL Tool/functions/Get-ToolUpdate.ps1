@@ -12,6 +12,8 @@ Search-MovieBlogArea.ps1
 Search-StarWarez.ps1
 Search-VideothekCX.ps1
 Update-EdgeDriver.ps1
+Search-Gload.ps1
+Search-G4U.ps1
 "@ -split "`n"
 
 $showConsole = 0
