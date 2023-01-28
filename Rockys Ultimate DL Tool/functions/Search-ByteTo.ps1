@@ -1,5 +1,4 @@
-$rls = $rls.replace('.','+').replace('-','+-+')
-$rlsSearch = $rls
+$rlsSearch = $rls.replace('.','+').replace('-','+-+')
 
 #Import Selenium Driver
 Import-Module "$dataPath\WebDriver.dll"
