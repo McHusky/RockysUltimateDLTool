@@ -4,7 +4,7 @@ $check_all_functions =
 @"
 Get-Passwords.ps1
 Get-ToolUpdate.ps1
-Search-Boerse.ps1
+Search-ByteTo.ps1
 Search-DDLWarez.ps1
 Search-DataLoad.ps1
 Search-HDSource.ps1
