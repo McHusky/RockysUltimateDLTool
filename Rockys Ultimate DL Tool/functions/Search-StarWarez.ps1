@@ -1,3 +1,4 @@
+<#
 $rlsSearch = $rls.ToLower().Replace('.', '-')
 $starWarez = 'https://starwarez.to/movies/' + $rlsSearch + '/'
 	
@@ -18,3 +19,4 @@ else
 	Write-Host "Star-Warez DL gefunden!"
 	#Start-Process $starWarez
 }
+#>
